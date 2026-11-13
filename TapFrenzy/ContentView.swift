@@ -24,6 +24,9 @@ struct ContentView: View {
     // Number of seconds left in the game round
     @State private var timeRemaining = 10
 
+    // Current width and height of the button, starts at 200 and shrinks with each tap
+    @State private var buttonSize: CGFloat = 200
+
     // Saves the highest score on the device so it persists across launches
     @AppStorage("highScore") private var highScore = 0
 
@@ -50,8 +53,9 @@ struct ContentView: View {
                     if phase == .idle {
                         phase = .playing
                     }
-                    // Tap immediately scores a point
+                    // Tap immediately shrinks button and scores a point
                     if phase == .playing {
+                        buttonSize = max(90, buttonSize - 5)
                         score += 1
                     }
                 }) {
@@ -59,7 +63,7 @@ struct ContentView: View {
                         .font(.largeTitle)
                         .fontWeight(.bold)
                         .foregroundColor(.white)
-                        .frame(width: 200, height: 200)
+                        .frame(width: buttonSize, height: buttonSize)
                         .background(Circle().fill(Color.blue))
                 }
 
@@ -85,6 +89,7 @@ struct ContentView: View {
 
                 // Reset button to play another round
                 Button("Play Again") {
+                    buttonSize = 200
                     score = 0
                     timeRemaining = 10
                     phase = .idle
