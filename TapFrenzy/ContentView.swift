@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
+    // Stores the player's current tap score
+    @State private var score = 0
+
     var body: some View {
         VStack(spacing: 30) {
             // Timer display at the top
@@ -16,12 +19,13 @@ struct ContentView: View {
                 .fontWeight(.semibold)
 
             // Current score shown big and bold in the middle
-            Text("0")
+            Text("\(score)")
                 .font(.system(size: 80, weight: .heavy))
 
             // Big circular button for the user to tap
             Button(action: {
-                // Button action will be added in the next step
+                // Add 1 to the score on every tap
+                score += 1
             }) {
                 Text("TAP")
                     .font(.largeTitle)
