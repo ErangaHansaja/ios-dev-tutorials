@@ -11,10 +11,16 @@ struct ContentView: View {
     // Stores the player's current tap score
     @State private var score = 0
 
+    // Number of seconds left in the game round
+    @State private var timeRemaining = 10
+
+    // Timer that fires every 1 second on the main thread
+    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+
     var body: some View {
         VStack(spacing: 30) {
             // Timer display at the top
-            Text("Time: 10")
+            Text("Time: \(timeRemaining)")
                 .font(.title)
                 .fontWeight(.semibold)
 
@@ -36,6 +42,12 @@ struct ContentView: View {
             }
         }
         .padding()
+        // Decrement the timer every second
+        .onReceive(timer) { _ in
+            if timeRemaining > 0 {
+                timeRemaining -= 1
+            }
+        }
     }
 }
 
