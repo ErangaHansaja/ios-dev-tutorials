@@ -11,6 +11,8 @@
 		C04A07A730A75C4500E2D870 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04A07A630A75C4500E2D870 /* ContentView.swift */; };
 		C04A07A930A75C4C00E2D870 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C04A07A830A75C4C00E2D870 /* Assets.xcassets */; };
 		C04A07AC30A75C4C00E2D870 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C04A07AB30A75C4C00E2D870 /* Preview Assets.xcassets */; };
+		C04A07B330A75C4C00E2D870 /* TapFrenzyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04A07B230A75C4C00E2D870 /* TapFrenzyView.swift */; };
+		C04A07B530A75C4C00E2D870 /* LightItUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04A07B430A75C4C00E2D870 /* LightItUpView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		C04A07A630A75C4500E2D870 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C04A07A830A75C4C00E2D870 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C04A07AB30A75C4C00E2D870 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C04A07B230A75C4C00E2D870 /* TapFrenzyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapFrenzyView.swift; sourceTree = "<group>"; };
+		C04A07B430A75C4C00E2D870 /* LightItUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightItUpView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +57,8 @@
 			children = (
 				C04A07A430A75C4500E2D870 /* TapFrenzyApp.swift */,
 				C04A07A630A75C4500E2D870 /* ContentView.swift */,
+				C04A07B230A75C4C00E2D870 /* TapFrenzyView.swift */,
+				C04A07B430A75C4C00E2D870 /* LightItUpView.swift */,
 				C04A07A830A75C4C00E2D870 /* Assets.xcassets */,
 				C04A07AA30A75C4C00E2D870 /* Preview Content */,
 			);
@@ -138,6 +144,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C04A07A730A75C4500E2D870 /* ContentView.swift in Sources */,
+				C04A07B330A75C4C00E2D870 /* TapFrenzyView.swift in Sources */,
+				C04A07B530A75C4C00E2D870 /* LightItUpView.swift in Sources */,
 				C04A07A530A75C4500E2D870 /* TapFrenzyApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -197,7 +205,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -254,7 +262,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
