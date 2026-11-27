@@ -76,6 +76,9 @@ struct LightItUpView: View {
     // Current player score (clamped at 0 minimum)
     @State private var score = 0
 
+    // Persists Light It Up's best score independently of Tap Frenzy
+    @AppStorage("lightItUpHighScore") private var highScore = 0
+
     // Current level inside the 60-second round
     @State private var currentLevel: Level = .l1
 
@@ -123,9 +126,11 @@ struct LightItUpView: View {
 
     var body: some View {
         VStack(spacing: 20) {
-            // HUD bar showing score, level, and remaining time
+            // HUD bar showing score, best score, level, and remaining time
             HStack {
                 hudStat(title: "Score", value: "\(score)")
+                Spacer()
+                hudStat(title: "Best", value: "\(highScore)")
                 Spacer()
                 hudStat(title: "Level", value: currentLevel.label)
                 Spacer()
@@ -176,6 +181,10 @@ struct LightItUpView: View {
 
                     Text("Score: \(score)")
                         .font(.title)
+
+                    Text("Best: \(highScore)")
+                        .font(.title2)
+                        .foregroundColor(.secondary)
 
                     Button("Play Again") {
                         startGame()
@@ -358,6 +367,9 @@ struct LightItUpView: View {
     }
 
     private func endGame() {
+        if score > highScore {
+            highScore = score
+        }
         litDeadlines = [:]
         clearFlash()
         for index in cards.indices {
